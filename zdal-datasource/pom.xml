@@ -29,7 +29,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.oracle</groupId>
-			<artifactId>ojdbc6</artifactId>
+			<artifactId>ojdbc14</artifactId>
 		</dependency>
 
 		<dependency>

@@ -15,7 +15,6 @@
 		<module>zdal-parser</module>
 		<module>zdal-rule</module>
 		<module>zdal-datasource</module>
-		<module>zdal-test</module>
 	</modules>
 
 	<properties>
@@ -81,8 +80,8 @@
 			</dependency>
 			<dependency>
 				<groupId>com.oracle</groupId>
-				<artifactId>ojdbc6</artifactId>
-				<version>11.2.0.3.0</version>
+				<artifactId>ojdbc14</artifactId>
+				<version>10.2.0.3.0</version>
 			</dependency>
 			<!-- test jars-->
 			<dependency>

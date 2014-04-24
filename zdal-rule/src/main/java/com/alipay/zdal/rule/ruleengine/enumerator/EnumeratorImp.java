@@ -316,6 +316,7 @@ public class EnumeratorImp implements Enumerator {
                     needMergeValueInCloseInterval);
                 break;
             case Comparative.Equivalent:
+            case Comparative.Like:
 
                 // 等于关系，直接放在collection
                 retValue.add(comp.getValue());
