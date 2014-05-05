@@ -24,6 +24,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Properties;
+import java.util.concurrent.Executor;
 
 import org.apache.log4j.Logger;
 
@@ -685,6 +686,44 @@ public class WrappedConnection implements Connection {
 
     public void setZdatasource(ZDataSource zdatasource) {
         this.zdatasource = zdatasource;
+    }
+
+    //jdk1.7
+    /** 
+     * @see java.sql.Connection#setSchema(java.lang.String)
+     */
+    @Override
+    public void setSchema(String schema) throws SQLException {
+    }
+
+    /** 
+     * @see java.sql.Connection#getSchema()
+     */
+    @Override
+    public String getSchema() throws SQLException {
+        return null;
+    }
+
+    /** 
+     * @see java.sql.Connection#abort(java.util.concurrent.Executor)
+     */
+    @Override
+    public void abort(Executor executor) throws SQLException {
+    }
+
+    /** 
+     * @see java.sql.Connection#setNetworkTimeout(java.util.concurrent.Executor, int)
+     */
+    @Override
+    public void setNetworkTimeout(Executor executor, int milliseconds) throws SQLException {
+    }
+
+    /** 
+     * @see java.sql.Connection#getNetworkTimeout()
+     */
+    @Override
+    public int getNetworkTimeout() throws SQLException {
+        return 0;
     }
 
 }

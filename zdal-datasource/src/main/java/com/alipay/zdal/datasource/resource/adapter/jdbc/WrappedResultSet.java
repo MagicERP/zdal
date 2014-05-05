@@ -1579,4 +1579,21 @@ public class WrappedResultSet implements ResultSet {
     public void updateSQLXML(String columnLabel, SQLXML xmlObject) throws SQLException {
     }
 
+    //jdk1.7
+    /** 
+     * @see java.sql.ResultSet#getObject(int, java.lang.Class)
+     */
+    @Override
+    public <T> T getObject(int columnIndex, Class<T> type) throws SQLException {
+        return null;
+    }
+
+    /** 
+     * @see java.sql.ResultSet#getObject(java.lang.String, java.lang.Class)
+     */
+    @Override
+    public <T> T getObject(String columnLabel, Class<T> type) throws SQLException {
+        return null;
+    }
+
 }

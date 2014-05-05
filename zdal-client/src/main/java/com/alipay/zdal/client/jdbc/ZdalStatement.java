@@ -16,8 +16,8 @@ import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.Map.Entry;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -1825,6 +1825,22 @@ public class ZdalStatement implements Statement {
 
     public void setAppDsName(String appDsName) {
         this.appDsName = appDsName;
+    }
+
+    // jdk1.7
+    /** 
+     * @see java.sql.Statement#closeOnCompletion()
+     */
+    @Override
+    public void closeOnCompletion() throws SQLException {
+    }
+
+    /** 
+     * @see java.sql.Statement#isCloseOnCompletion()
+     */
+    @Override
+    public boolean isCloseOnCompletion() throws SQLException {
+        return false;
     }
 
 }

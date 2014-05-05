@@ -963,4 +963,22 @@ public class WrappedCallableStatement extends WrappedPreparedStatement implement
     @Override
     public void setPoolable(boolean poolable) throws SQLException {
     }
+
+    //jdk1.7
+    /** 
+     * @see java.sql.CallableStatement#getObject(int, java.lang.Class)
+     */
+    @Override
+    public <T> T getObject(int parameterIndex, Class<T> type) throws SQLException {
+        return null;
+    }
+
+    /** 
+     * @see java.sql.CallableStatement#getObject(java.lang.String, java.lang.Class)
+     */
+    @Override
+    public <T> T getObject(String parameterName, Class<T> type) throws SQLException {
+        return null;
+    }
+
 }

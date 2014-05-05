@@ -8,6 +8,8 @@ import java.io.PrintWriter;
 import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.SQLFeatureNotSupportedException;
+import java.util.logging.Logger;
 
 import javax.naming.Reference;
 import javax.sql.DataSource;
@@ -152,5 +154,15 @@ public class WrapperDataSource implements Referenceable, DataSource, Serializabl
     public String getDataSourceName() {
         return dataSourceName;
     }
+
+    //jdk1.7
+    /** 
+     * @see javax.sql.CommonDataSource#getParentLogger()
+     */
+    @Override
+    public Logger getParentLogger() throws SQLFeatureNotSupportedException {
+        return null;
+    }
+
 
 }

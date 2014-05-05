@@ -4,6 +4,9 @@
  */
 package com.alipay.zdal.client.jdbc;
 
+import java.sql.SQLFeatureNotSupportedException;
+import java.util.logging.Logger;
+
 import javax.sql.DataSource;
 
 import com.alipay.zdal.client.exceptions.ZdalClientException;
@@ -37,4 +40,15 @@ public class ZdalDataSource extends AbstractZdalDataSource implements DataSource
         }
 
     }
+
+    // jdk1.7
+
+    /** 
+     * @see javax.sql.CommonDataSource#getParentLogger()
+     */
+    @Override
+    public Logger getParentLogger() throws SQLFeatureNotSupportedException {
+        return null;
+    }
+
 }

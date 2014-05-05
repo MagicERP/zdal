@@ -621,4 +621,20 @@ public class WrappedStatement implements Statement, StatementAccess {
         this.dataSourceName = dataSourceName;
     }
 
+    //jdk1.7
+    /** 
+     * @see java.sql.Statement#closeOnCompletion()
+     */
+    @Override
+    public void closeOnCompletion() throws SQLException {
+    }
+
+    /** 
+     * @see java.sql.Statement#isCloseOnCompletion()
+     */
+    @Override
+    public boolean isCloseOnCompletion() throws SQLException {
+        return false;
+    }
+
 }

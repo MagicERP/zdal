@@ -742,4 +742,25 @@ public class ZDatabaseMetaData implements DatabaseMetaData {
     public <T> T unwrap(Class<T> iface) throws SQLException {
         return null;
     }
+
+    // jdk1.7
+
+    /** 
+     * @see java.sql.DatabaseMetaData#getPseudoColumns(java.lang.String, java.lang.String, java.lang.String, java.lang.String)
+     */
+    @Override
+    public ResultSet getPseudoColumns(String catalog, String schemaPattern,
+                                      String tableNamePattern, String columnNamePattern)
+                                                                                        throws SQLException {
+        return null;
+    }
+
+    /** 
+     * @see java.sql.DatabaseMetaData#generatedKeyAlwaysReturned()
+     */
+    @Override
+    public boolean generatedKeyAlwaysReturned() throws SQLException {
+        return false;
+    }
+
 }

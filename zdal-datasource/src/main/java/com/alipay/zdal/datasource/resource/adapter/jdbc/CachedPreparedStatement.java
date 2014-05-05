@@ -803,4 +803,22 @@ public class CachedPreparedStatement implements PreparedStatement {
      */
     public void setPoolable(boolean poolable) throws SQLException {
     }
+
+    // jdk1.7
+
+    /** 
+     * @see java.sql.Statement#closeOnCompletion()
+     */
+    @Override
+    public void closeOnCompletion() throws SQLException {
+    }
+
+    /** 
+     * @see java.sql.Statement#isCloseOnCompletion()
+     */
+    @Override
+    public boolean isCloseOnCompletion() throws SQLException {
+        return false;
+    }
+
 }

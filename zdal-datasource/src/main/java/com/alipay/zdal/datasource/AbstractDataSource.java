@@ -7,7 +7,9 @@ package com.alipay.zdal.datasource;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.SQLFeatureNotSupportedException;
 import java.util.ArrayList;
+import java.util.logging.Logger;
 
 import javax.sql.DataSource;
 
@@ -87,6 +89,16 @@ public abstract class AbstractDataSource implements DataSource {
 
     public static ArrayList<ZDataSource> getZdatasourcelist() {
         return zdatasourceList;
+    }
+
+    //jdk1.7
+
+    /** 
+     * @see javax.sql.CommonDataSource#getParentLogger()
+     */
+    @Override
+    public Logger getParentLogger() throws SQLFeatureNotSupportedException {
+        return null;
     }
 
 }
